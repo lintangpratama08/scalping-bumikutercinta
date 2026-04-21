@@ -1,0 +1,25 @@
+{
+  "points_total": 6306,
+  "points_done": 48,
+  "requests_total": 48,
+  "requests_failed": 0,
+  "features_seen": 19,
+  "features_written": 18,
+  "duplicate_features": 0,
+  "errors": [],
+  "result": {
+    "area_id": 320437,
+    "area": "Soreang",
+    "points_total": 6306,
+    "points_done": 48,
+    "requests_total": 48,
+    "requests_failed": 0,
+    "features": 18,
+    "inserted": 0,
+    "duplicates": 0,
+    "existing_hashes": 0,
+    "errors": [],
+    "outputs": {},
+    "status": "completed"
+  }
+}

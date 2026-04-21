@@ -1,0 +1,2951 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.5154925,
+              -7.02788625
+            ],
+            [
+              107.51545262,
+              -7.02787515
+            ],
+            [
+              107.51539944,
+              -7.02787124
+            ],
+            [
+              107.51529077,
+              -7.02787491
+            ],
+            [
+              107.51526316,
+              -7.02809198
+            ],
+            [
+              107.51523939,
+              -7.02819184
+            ],
+            [
+              107.51551599,
+              -7.02824203
+            ],
+            [
+              107.51555403,
+              -7.0279899
+            ],
+            [
+              107.515476,
+              -7.02796131
+            ],
+            [
+              107.5154925,
+              -7.02788625
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "1098b98972a44e20a93fda4db05b7925",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 1068,
+        "tahun": 2004,
+        "nib": "01278",
+        "alatukur": null,
+        "nomor": "10143415100113",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5154037,
+        "sample_lat": -7.0280582,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "246d6814129a0323e6c1471687cc8e16",
+        "dedup_keys": [
+          "nib:01278",
+          "persilpasifid:1098b98972a44e20a93fda4db05b7925",
+          "nomor:10143415100113",
+          "geometry:246d6814129a0323e6c1471687cc8e16"
+        ],
+        "source_key": "nib:01278"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51527195,
+              -7.02760964
+            ],
+            [
+              107.51519447,
+              -7.02759579
+            ],
+            [
+              107.51516588,
+              -7.02771519
+            ],
+            [
+              107.51515436,
+              -7.02782439
+            ],
+            [
+              107.51515913,
+              -7.02782999
+            ],
+            [
+              107.51524552,
+              -7.0278298
+            ],
+            [
+              107.51527195,
+              -7.02760964
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C1526FCA51E063B416140A776A",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 249,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5151881,
+        "sample_lat": -7.0276303,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "060c87d78c5ad1b43906b0bac143db30",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c1526fca51e063b416140a776a",
+          "geometry:060c87d78c5ad1b43906b0bac143db30"
+        ],
+        "source_key": "persilpasifid:0d08e4c1526fca51e063b416140a776a"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51551599,
+              -7.02824203
+            ],
+            [
+              107.51549986,
+              -7.02834157
+            ],
+            [
+              107.5158821,
+              -7.02838274
+            ],
+            [
+              107.51592234,
+              -7.02812606
+            ],
+            [
+              107.51594654,
+              -7.02799687
+            ],
+            [
+              107.51557079,
+              -7.02790685
+            ],
+            [
+              107.51555403,
+              -7.0279899
+            ],
+            [
+              107.51551599,
+              -7.02824203
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "c92237977c1e4d75898a8065de6cc2ec",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 1955,
+        "tahun": 1982,
+        "nib": "01416",
+        "alatukur": null,
+        "nomor": "10143415100240",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5156193,
+        "sample_lat": -7.0280582,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "67fe3196ceabc9167f1dc2855f0b58c4",
+        "dedup_keys": [
+          "nib:01416",
+          "persilpasifid:c92237977c1e4d75898a8065de6cc2ec",
+          "nomor:10143415100240",
+          "geometry:67fe3196ceabc9167f1dc2855f0b58c4"
+        ],
+        "source_key": "nib:01416"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51538631,
+              -7.02762974
+            ],
+            [
+              107.51537333,
+              -7.02763221
+            ],
+            [
+              107.51533785,
+              -7.02783226
+            ],
+            [
+              107.51539898,
+              -7.02782672
+            ],
+            [
+              107.51544589,
+              -7.02783451
+            ],
+            [
+              107.51548094,
+              -7.02764735
+            ],
+            [
+              107.51538631,
+              -7.02762974
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C15261CA51E063B416140A776A",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 257,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5154037,
+        "sample_lat": -7.0276303,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "762b0a67a652159ccf8fad47713ec9f3",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c15261ca51e063b416140a776a",
+          "geometry:762b0a67a652159ccf8fad47713ec9f3"
+        ],
+        "source_key": "persilpasifid:0d08e4c15261ca51e063b416140a776a"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51538631,
+              -7.02762974
+            ],
+            [
+              107.51548094,
+              -7.02764735
+            ],
+            [
+              107.5154925,
+              -7.02758912
+            ],
+            [
+              107.51539819,
+              -7.02756842
+            ],
+            [
+              107.51538631,
+              -7.02762974
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C16C3DFDB8E063B516140A7B6D",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 71,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5154037,
+        "sample_lat": -7.0276303,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "8b7fc33d4aed8f756739165d3d534593",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c16c3dfdb8e063b516140a7b6d",
+          "geometry:8b7fc33d4aed8f756739165d3d534593"
+        ],
+        "source_key": "persilpasifid:0d08e4c16c3dfdb8e063b516140a7b6d"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.52886606,
+              -7.03519629
+            ],
+            [
+              107.52893347,
+              -7.03500152
+            ],
+            [
+              107.52878422,
+              -7.03494418
+            ],
+            [
+              107.52874369,
+              -7.03493542
+            ],
+            [
+              107.52873398,
+              -7.03493753
+            ],
+            [
+              107.52868398,
+              -7.03512774
+            ],
+            [
+              107.52886606,
+              -7.03519629
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "528460FB37391D49E053141D0B0AF969",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 512,
+        "tahun": 2017,
+        "nib": "04472",
+        "alatukur": null,
+        "nomor": "10143401102444",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5288348,
+        "sample_lat": -7.0351869,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "ee4e061f8eeae7fa34e3ad8d12e62de0",
+        "dedup_keys": [
+          "nib:04472",
+          "persilpasifid:528460fb37391d49e053141d0b0af969",
+          "nomor:10143401102444",
+          "geometry:ee4e061f8eeae7fa34e3ad8d12e62de0"
+        ],
+        "source_key": "nib:04472"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.52842426,
+              -7.03525221
+            ],
+            [
+              107.52844586,
+              -7.03525633
+            ],
+            [
+              107.52860484,
+              -7.03533812
+            ],
+            [
+              107.52862298,
+              -7.03535406
+            ],
+            [
+              107.52877369,
+              -7.03544232
+            ],
+            [
+              107.52882512,
+              -7.03539705
+            ],
+            [
+              107.52884321,
+              -7.03539285
+            ],
+            [
+              107.52886968,
+              -7.03539765
+            ],
+            [
+              107.52896037,
+              -7.03543191
+            ],
+            [
+              107.52897272,
+              -7.03542778
+            ],
+            [
+              107.52900914,
+              -7.03544208
+            ],
+            [
+              107.52902663,
+              -7.03543177
+            ],
+            [
+              107.52905594,
+              -7.03539036
+            ],
+            [
+              107.52908125,
+              -7.03531525
+            ],
+            [
+              107.52908171,
+              -7.03528012
+            ],
+            [
+              107.52901715,
+              -7.03525932
+            ],
+            [
+              107.5290115,
+              -7.03525242
+            ],
+            [
+              107.52891997,
+              -7.03522235
+            ],
+            [
+              107.52886606,
+              -7.03519629
+            ],
+            [
+              107.52868398,
+              -7.03512774
+            ],
+            [
+              107.52873398,
+              -7.03493753
+            ],
+            [
+              107.52870206,
+              -7.03491349
+            ],
+            [
+              107.52854903,
+              -7.03490196
+            ],
+            [
+              107.52842426,
+              -7.03525221
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D1BC3C0C4B77E45E063B516140ABF5A",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 2109,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5288348,
+        "sample_lat": -7.0351869,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "cc57351688a56b12069679d439768217",
+        "dedup_keys": [
+          "persilpasifid:0d1bc3c0c4b77e45e063b516140abf5a",
+          "geometry:cc57351688a56b12069679d439768217"
+        ],
+        "source_key": "persilpasifid:0d1bc3c0c4b77e45e063b516140abf5a"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51518403,
+              -7.02720921
+            ],
+            [
+              107.51519059,
+              -7.02716987
+            ],
+            [
+              107.51524703,
+              -7.02717838
+            ],
+            [
+              107.51527211,
+              -7.02703525
+            ],
+            [
+              107.51517156,
+              -7.0270158
+            ],
+            [
+              107.51513406,
+              -7.02720471
+            ],
+            [
+              107.51518403,
+              -7.02720921
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C29B0ACA53E063B416140A3E1A",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 212,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5151881,
+        "sample_lat": -7.0272023,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "acd843274ad81ec02aecbb899fd61aa1",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c29b0aca53e063b416140a3e1a",
+          "geometry:acd843274ad81ec02aecbb899fd61aa1"
+        ],
+        "source_key": "persilpasifid:0d08e4c29b0aca53e063b416140a3e1a"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51518403,
+              -7.02720921
+            ],
+            [
+              107.51513406,
+              -7.02720471
+            ],
+            [
+              107.51517156,
+              -7.0270158
+            ],
+            [
+              107.51511682,
+              -7.02701336
+            ],
+            [
+              107.51505647,
+              -7.02734425
+            ],
+            [
+              107.51511348,
+              -7.02735277
+            ],
+            [
+              107.51511454,
+              -7.02734379
+            ],
+            [
+              107.51516311,
+              -7.02735238
+            ],
+            [
+              107.51516299,
+              -7.02733455
+            ],
+            [
+              107.51516571,
+              -7.02733457
+            ],
+            [
+              107.51518403,
+              -7.02720921
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "9ab001da21374c8cb734b6e901d1a7db",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 309,
+        "tahun": 2019,
+        "nib": "02144",
+        "alatukur": null,
+        "nomor": "10143401100969",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5151881,
+        "sample_lat": -7.0272023,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "7a9ce0761d5ed7d38c0ea692269fde5b",
+        "dedup_keys": [
+          "nib:02144",
+          "persilpasifid:9ab001da21374c8cb734b6e901d1a7db",
+          "nomor:10143401100969",
+          "geometry:7a9ce0761d5ed7d38c0ea692269fde5b"
+        ],
+        "source_key": "nib:02144"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51518403,
+              -7.02720921
+            ],
+            [
+              107.51516306,
+              -7.02734436
+            ],
+            [
+              107.51522272,
+              -7.02735377
+            ],
+            [
+              107.51524703,
+              -7.02717838
+            ],
+            [
+              107.51519059,
+              -7.02716987
+            ],
+            [
+              107.51518403,
+              -7.02720921
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C23C16FDD7E063B516140AABDF",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 125,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5151881,
+        "sample_lat": -7.0272023,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "c485d121a00ceb2be150a2fce1028440",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c23c16fdd7e063b516140aabdf",
+          "geometry:c485d121a00ceb2be150a2fce1028440"
+        ],
+        "source_key": "persilpasifid:0d08e4c23c16fdd7e063b516140aabdf"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51533081,
+              -7.02678862
+            ],
+            [
+              107.51532552,
+              -7.02681088
+            ],
+            [
+              107.51537157,
+              -7.0268205
+            ],
+            [
+              107.51536376,
+              -7.02686181
+            ],
+            [
+              107.51539286,
+              -7.02686713
+            ],
+            [
+              107.5153708,
+              -7.02697399
+            ],
+            [
+              107.51542324,
+              -7.02698291
+            ],
+            [
+              107.51544171,
+              -7.02688975
+            ],
+            [
+              107.51545263,
+              -7.02689174
+            ],
+            [
+              107.51549418,
+              -7.02672
+            ],
+            [
+              107.51541462,
+              -7.02670338
+            ],
+            [
+              107.51541604,
+              -7.02669604
+            ],
+            [
+              107.51536844,
+              -7.02668615
+            ],
+            [
+              107.51533601,
+              -7.02678862
+            ],
+            [
+              107.51533081,
+              -7.02678862
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "257E11F80F783184E053131D0B0AC299",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 326,
+        "tahun": 2016,
+        "nib": "02680",
+        "alatukur": null,
+        "nomor": "10143411101481",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5154037,
+        "sample_lat": -7.0269883,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "7b9defb6cd857f4d10b671011ba23645",
+        "dedup_keys": [
+          "nib:02680",
+          "persilpasifid:257e11f80f783184e053131d0b0ac299",
+          "nomor:10143411101481",
+          "geometry:7b9defb6cd857f4d10b671011ba23645"
+        ],
+        "source_key": "nib:02680"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51494476,
+              -7.02741786
+            ],
+            [
+              107.5149348,
+              -7.02752077
+            ],
+            [
+              107.51510007,
+              -7.02756162
+            ],
+            [
+              107.51511577,
+              -7.02744513
+            ],
+            [
+              107.51494476,
+              -7.02741786
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C1525FCA51E063B416140A776A",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 230,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5149725,
+        "sample_lat": -7.0274163,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "99f2e577bf889106605798cd627e813c",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c1525fca51e063b416140a776a",
+          "geometry:99f2e577bf889106605798cd627e813c"
+        ],
+        "source_key": "persilpasifid:0d08e4c1525fca51e063b416140a776a"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51552337,
+              -7.02749025
+            ],
+            [
+              107.51550479,
+              -7.02757721
+            ],
+            [
+              107.51561291,
+              -7.02760228
+            ],
+            [
+              107.51569179,
+              -7.02732633
+            ],
+            [
+              107.51557472,
+              -7.02729709
+            ],
+            [
+              107.51555362,
+              -7.02739067
+            ],
+            [
+              107.51552706,
+              -7.02746375
+            ],
+            [
+              107.51552337,
+              -7.02749025
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C16C3CFDB8E063B516140A7B6D",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 408,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5156193,
+        "sample_lat": -7.0274163,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "d5920aee4d9d8c7d7d7a3701a048e161",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c16c3cfdb8e063b516140a7b6d",
+          "geometry:d5920aee4d9d8c7d7d7a3701a048e161"
+        ],
+        "source_key": "persilpasifid:0d08e4c16c3cfdb8e063b516140a7b6d"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51521071,
+              -7.02735843
+            ],
+            [
+              107.51512727,
+              -7.02734604
+            ],
+            [
+              107.51511577,
+              -7.02744513
+            ],
+            [
+              107.51519853,
+              -7.02745269
+            ],
+            [
+              107.51521071,
+              -7.02735843
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C23C28FDD7E063B516140AABDF",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 99,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5151881,
+        "sample_lat": -7.0274163,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "27421791b8092318a20462dff4e926c9",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c23c28fdd7e063b516140aabdf",
+          "geometry:27421791b8092318a20462dff4e926c9"
+        ],
+        "source_key": "persilpasifid:0d08e4c23c28fdd7e063b516140aabdf"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51536415,
+              -7.02737727
+            ],
+            [
+              107.51534596,
+              -7.02746861
+            ],
+            [
+              107.51540422,
+              -7.02747676
+            ],
+            [
+              107.51542213,
+              -7.0273872
+            ],
+            [
+              107.51536415,
+              -7.02737727
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "5287B57DF6BCC039E053021D0B0A2D4E",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 66,
+        "tahun": 2017,
+        "nib": "04738",
+        "alatukur": null,
+        "nomor": "10143401102846",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5154037,
+        "sample_lat": -7.0274163,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "29319e03fa5168c66dc42392a7b8e278",
+        "dedup_keys": [
+          "nib:04738",
+          "persilpasifid:5287b57df6bcc039e053021d0b0a2d4e",
+          "nomor:10143401102846",
+          "geometry:29319e03fa5168c66dc42392a7b8e278"
+        ],
+        "source_key": "nib:04738"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51535561,
+              -7.02705683
+            ],
+            [
+              107.51531542,
+              -7.02724023
+            ],
+            [
+              107.51532803,
+              -7.02724164
+            ],
+            [
+              107.51532701,
+              -7.02725083
+            ],
+            [
+              107.5154483,
+              -7.02727492
+            ],
+            [
+              107.51549589,
+              -7.02708767
+            ],
+            [
+              107.51535561,
+              -7.02705683
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "8BB8088DC3D61E09E0530C1D140AA1AE",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 335,
+        "tahun": 1999,
+        "nib": "05350",
+        "alatukur": null,
+        "nomor": "10143401100730",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5154037,
+        "sample_lat": -7.0272023,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "5cd885a56589f002ab9a066636f36b46",
+        "dedup_keys": [
+          "nib:05350",
+          "persilpasifid:8bb8088dc3d61e09e0530c1d140aa1ae",
+          "nomor:10143401100730",
+          "geometry:5cd885a56589f002ab9a066636f36b46"
+        ],
+        "source_key": "nib:05350"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51583293,
+              -7.0274688
+            ],
+            [
+              107.51586556,
+              -7.02733927
+            ],
+            [
+              107.51578114,
+              -7.02731701
+            ],
+            [
+              107.51574747,
+              -7.02745085
+            ],
+            [
+              107.51583293,
+              -7.0274688
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "a7ec9294a9a3401ea28275f6fa179769",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 145,
+        "tahun": 1998,
+        "nib": "02975",
+        "alatukur": null,
+        "nomor": "10143401100660",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5158349,
+        "sample_lat": -7.0274163,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "d9175104e665b138ad38d54d66f41511",
+        "dedup_keys": [
+          "nib:02975",
+          "persilpasifid:a7ec9294a9a3401ea28275f6fa179769",
+          "nomor:10143401100660",
+          "geometry:d9175104e665b138ad38d54d66f41511"
+        ],
+        "source_key": "nib:02975"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51606646,
+              -7.02804292
+            ],
+            [
+              107.51594398,
+              -7.02801052
+            ],
+            [
+              107.51592234,
+              -7.02812606
+            ],
+            [
+              107.51604261,
+              -7.02815618
+            ],
+            [
+              107.51606646,
+              -7.02804292
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "72846F5654D25A6CE053031D0B0AA3C3",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 178,
+        "tahun": 2018,
+        "nib": "02353",
+        "alatukur": "Meteran",
+        "nomor": "10143415101031",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5160505,
+        "sample_lat": -7.0280582,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "a531a181c0d546b3e6a56b9b7e53268c",
+        "dedup_keys": [
+          "nib:02353",
+          "persilpasifid:72846f5654d25a6ce053031d0b0aa3c3",
+          "nomor:10143415101031",
+          "geometry:a531a181c0d546b3e6a56b9b7e53268c"
+        ],
+        "source_key": "nib:02353"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51556644,
+              -7.02786371
+            ],
+            [
+              107.51565295,
+              -7.02788401
+            ],
+            [
+              107.51569836,
+              -7.02764991
+            ],
+            [
+              107.51561027,
+              -7.02762969
+            ],
+            [
+              107.51556644,
+              -7.02786371
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C32786FDDCE063B516140ABC71",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 260,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5156193,
+        "sample_lat": -7.0278442,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "3b170447030766f5e821f8ad90716db2",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c32786fddce063b516140abc71",
+          "geometry:3b170447030766f5e821f8ad90716db2"
+        ],
+        "source_key": "persilpasifid:0d08e4c32786fddce063b516140abc71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51496591,
+              -7.02715354
+            ],
+            [
+              107.5149553,
+              -7.02723619
+            ],
+            [
+              107.51507401,
+              -7.02724657
+            ],
+            [
+              107.51508665,
+              -7.02717417
+            ],
+            [
+              107.51496591,
+              -7.02715354
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "056E173F9F86FA55E053131D0B0ACD52",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 115,
+        "tahun": 2015,
+        "nib": null,
+        "alatukur": null,
+        "nomor": "10143401101555",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5149725,
+        "sample_lat": -7.0272023,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "cdcb3eb222b755fd58d98434cd40a314",
+        "dedup_keys": [
+          "persilpasifid:056e173f9f86fa55e053131d0b0acd52",
+          "nomor:10143401101555",
+          "geometry:cdcb3eb222b755fd58d98434cd40a314"
+        ],
+        "source_key": "persilpasifid:056e173f9f86fa55e053131d0b0acd52"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51574024,
+              -7.02722734
+            ],
+            [
+              107.51583789,
+              -7.02724868
+            ],
+            [
+              107.51585612,
+              -7.02717821
+            ],
+            [
+              107.51575607,
+              -7.02715865
+            ],
+            [
+              107.51574024,
+              -7.02722734
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C15264CA51E063B416140A776A",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 88,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5158349,
+        "sample_lat": -7.0272023,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "1290e2d94637cecb313442c622a36fa4",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c15264ca51e063b416140a776a",
+          "geometry:1290e2d94637cecb313442c622a36fa4"
+        ],
+        "source_key": "persilpasifid:0d08e4c15264ca51e063b416140a776a"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51569179,
+              -7.02732633
+            ],
+            [
+              107.51573543,
+              -7.02715218
+            ],
+            [
+              107.51561376,
+              -7.0271239
+            ],
+            [
+              107.51557472,
+              -7.02729709
+            ],
+            [
+              107.51569179,
+              -7.02732633
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C29B0DCA53E063B416140A3E1A",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 269,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5156193,
+        "sample_lat": -7.0272023,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "6855557bb73ac0bd434f3ce59b95c4e5",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c29b0dca53e063b416140a3e1a",
+          "geometry:6855557bb73ac0bd434f3ce59b95c4e5"
+        ],
+        "source_key": "persilpasifid:0d08e4c29b0dca53e063b416140a3e1a"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51601801,
+              -7.02748261
+            ],
+            [
+              107.51608889,
+              -7.02722732
+            ],
+            [
+              107.51591687,
+              -7.02719523
+            ],
+            [
+              107.51577872,
+              -7.027716
+            ],
+            [
+              107.51588417,
+              -7.02773819
+            ],
+            [
+              107.51591604,
+              -7.02773625
+            ],
+            [
+              107.51597306,
+              -7.02747819
+            ],
+            [
+              107.51601801,
+              -7.02748261
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C29B1ACA53E063B416140A3E1A",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 1012,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5158349,
+        "sample_lat": -7.0276303,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "bbf8126e59af581ba2c361a668f5903d",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c29b1aca53e063b416140a3e1a",
+          "geometry:bbf8126e59af581ba2c361a668f5903d"
+        ],
+        "source_key": "persilpasifid:0d08e4c29b1aca53e063b416140a3e1a"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51561027,
+              -7.02762969
+            ],
+            [
+              107.51561265,
+              -7.02761698
+            ],
+            [
+              107.51550388,
+              -7.02759102
+            ],
+            [
+              107.51545685,
+              -7.02783519
+            ],
+            [
+              107.51556644,
+              -7.02786371
+            ],
+            [
+              107.51561027,
+              -7.02762969
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E3BAF866CA4FE063B416140A00DF",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 343,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5156193,
+        "sample_lat": -7.0276303,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "e6f93c490ee58db22babe44c958ac92f",
+        "dedup_keys": [
+          "persilpasifid:0d08e3baf866ca4fe063b416140a00df",
+          "geometry:e6f93c490ee58db22babe44c958ac92f"
+        ],
+        "source_key": "persilpasifid:0d08e3baf866ca4fe063b416140a00df"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51694689,
+              -7.02812551
+            ],
+            [
+              107.51697712,
+              -7.02793688
+            ],
+            [
+              107.51697941,
+              -7.02789287
+            ],
+            [
+              107.51710132,
+              -7.02745097
+            ],
+            [
+              107.51632976,
+              -7.02728982
+            ],
+            [
+              107.51623699,
+              -7.02773784
+            ],
+            [
+              107.51617392,
+              -7.02807619
+            ],
+            [
+              107.51619108,
+              -7.02809182
+            ],
+            [
+              107.51619823,
+              -7.02811039
+            ],
+            [
+              107.51617798,
+              -7.02828649
+            ],
+            [
+              107.51687332,
+              -7.02843682
+            ],
+            [
+              107.51694689,
+              -7.02812551
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "b4f4598100f54cad977656c12e74e39a",
+        "nilai": null,
+        "tipehak": "Hak Pakai",
+        "luas": 9475,
+        "tahun": 2002,
+        "nib": "02005",
+        "alatukur": null,
+        "nomor": "10143401400005",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5162661,
+        "sample_lat": -7.0282722,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "6c34306757f9047b786b2e6cd6f4fb2d",
+        "dedup_keys": [
+          "nib:02005",
+          "persilpasifid:b4f4598100f54cad977656c12e74e39a",
+          "nomor:10143401400005",
+          "geometry:6c34306757f9047b786b2e6cd6f4fb2d"
+        ],
+        "source_key": "nib:02005"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51611533,
+              -7.02765837
+            ],
+            [
+              107.5161325,
+              -7.02758417
+            ],
+            [
+              107.51605736,
+              -7.02756752
+            ],
+            [
+              107.51604129,
+              -7.02764371
+            ],
+            [
+              107.51611533,
+              -7.02765837
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C16C3EFDB8E063B516140A7B6D",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 72,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5160505,
+        "sample_lat": -7.0276303,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "569f5c0e24c0a7c8cc4e64ad63cf6909",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c16c3efdb8e063b516140a7b6d",
+          "geometry:569f5c0e24c0a7c8cc4e64ad63cf6909"
+        ],
+        "source_key": "persilpasifid:0d08e4c16c3efdb8e063b516140a7b6d"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51623115,
+              -7.0272678
+            ],
+            [
+              107.51616632,
+              -7.02751897
+            ],
+            [
+              107.51625073,
+              -7.02753612
+            ],
+            [
+              107.51630374,
+              -7.0273
+            ],
+            [
+              107.51628531,
+              -7.02728247
+            ],
+            [
+              107.51623115,
+              -7.0272678
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "e25d62cac56d4b8cb491aa21773faebf",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 255,
+        "tahun": 1997,
+        "nib": "00532",
+        "alatukur": null,
+        "nomor": "10143401100627",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5162661,
+        "sample_lat": -7.0274163,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "b897aa2733536100f436fbc34923135b",
+        "dedup_keys": [
+          "nib:00532",
+          "persilpasifid:e25d62cac56d4b8cb491aa21773faebf",
+          "nomor:10143401100627",
+          "geometry:b897aa2733536100f436fbc34923135b"
+        ],
+        "source_key": "nib:00532"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51599346,
+              -7.02783014
+            ],
+            [
+              107.51597011,
+              -7.02794029
+            ],
+            [
+              107.51605793,
+              -7.02795802
+            ],
+            [
+              107.51608259,
+              -7.02785111
+            ],
+            [
+              107.51599346,
+              -7.02783014
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "02529343b9e3447e9f7933b0cefcdf6a",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 123,
+        "tahun": 1999,
+        "nib": "00684",
+        "alatukur": null,
+        "nomor": "10143401100712",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5160505,
+        "sample_lat": -7.0278442,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "abbc8d5282129fd82ccf3f78bfb2b262",
+        "dedup_keys": [
+          "nib:00684",
+          "persilpasifid:02529343b9e3447e9f7933b0cefcdf6a",
+          "nomor:10143401100712",
+          "geometry:abbc8d5282129fd82ccf3f78bfb2b262"
+        ],
+        "source_key": "nib:00684"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51717467,
+              -7.03642755
+            ],
+            [
+              107.51705791,
+              -7.03637587
+            ],
+            [
+              107.51671654,
+              -7.03626334
+            ],
+            [
+              107.51670863,
+              -7.03625813
+            ],
+            [
+              107.51670106,
+              -7.03631233
+            ],
+            [
+              107.51670225,
+              -7.03647788
+            ],
+            [
+              107.51685163,
+              -7.03651623
+            ],
+            [
+              107.51696349,
+              -7.03656427
+            ],
+            [
+              107.51706513,
+              -7.03657793
+            ],
+            [
+              107.51717399,
+              -7.03661446
+            ],
+            [
+              107.51733252,
+              -7.03665544
+            ],
+            [
+              107.51750964,
+              -7.03672075
+            ],
+            [
+              107.5177336,
+              -7.03681405
+            ],
+            [
+              107.51795295,
+              -7.03691809
+            ],
+            [
+              107.51796692,
+              -7.03691284
+            ],
+            [
+              107.51829303,
+              -7.03704549
+            ],
+            [
+              107.51886293,
+              -7.03728632
+            ],
+            [
+              107.51888841,
+              -7.03730649
+            ],
+            [
+              107.51890032,
+              -7.03731106
+            ],
+            [
+              107.51903718,
+              -7.03733545
+            ],
+            [
+              107.5192238,
+              -7.03736282
+            ],
+            [
+              107.519317,
+              -7.03734955
+            ],
+            [
+              107.51979063,
+              -7.03737269
+            ],
+            [
+              107.51998032,
+              -7.03735472
+            ],
+            [
+              107.52026357,
+              -7.03724534
+            ],
+            [
+              107.52045746,
+              -7.03714543
+            ],
+            [
+              107.52086214,
+              -7.036895
+            ],
+            [
+              107.52097721,
+              -7.03679935
+            ],
+            [
+              107.5209972,
+              -7.03678634
+            ],
+            [
+              107.52134278,
+              -7.03659781
+            ],
+            [
+              107.52186204,
+              -7.03628126
+            ],
+            [
+              107.52201866,
+              -7.03619223
+            ],
+            [
+              107.52245015,
+              -7.03592745
+            ],
+            [
+              107.52304601,
+              -7.03557581
+            ],
+            [
+              107.5234888,
+              -7.03534139
+            ],
+            [
+              107.52343481,
+              -7.03514354
+            ],
+            [
+              107.52317856,
+              -7.03525943
+            ],
+            [
+              107.52287872,
+              -7.03542283
+            ],
+            [
+              107.52270123,
+              -7.03552371
+            ],
+            [
+              107.52270816,
+              -7.03553067
+            ],
+            [
+              107.52247795,
+              -7.03569076
+            ],
+            [
+              107.52201993,
+              -7.03595825
+            ],
+            [
+              107.5214953,
+              -7.03628173
+            ],
+            [
+              107.52109172,
+              -7.03652158
+            ],
+            [
+              107.52094802,
+              -7.03659681
+            ],
+            [
+              107.52094229,
+              -7.03660548
+            ],
+            [
+              107.52074195,
+              -7.03672255
+            ],
+            [
+              107.52052637,
+              -7.03686594
+            ],
+            [
+              107.52005584,
+              -7.03713362
+            ],
+            [
+              107.51995622,
+              -7.03715391
+            ],
+            [
+              107.51986941,
+              -7.03715795
+            ],
+            [
+              107.5197985,
+              -7.03713992
+            ],
+            [
+              107.51915854,
+              -7.03713803
+            ],
+            [
+              107.51901768,
+              -7.03710477
+            ],
+            [
+              107.51884047,
+              -7.03706923
+            ],
+            [
+              107.51872034,
+              -7.03703243
+            ],
+            [
+              107.51851846,
+              -7.03696152
+            ],
+            [
+              107.51844647,
+              -7.03693062
+            ],
+            [
+              107.51823497,
+              -7.03682807
+            ],
+            [
+              107.51797118,
+              -7.0367076
+            ],
+            [
+              107.51779032,
+              -7.03664556
+            ],
+            [
+              107.51746357,
+              -7.03652592
+            ],
+            [
+              107.51717467,
+              -7.03642755
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "F031BF5D0F7A893EE0530B1D140A6468",
+        "nilai": null,
+        "tipehak": "Hak Pakai",
+        "luas": 17950,
+        "tahun": 2023,
+        "nib": null,
+        "alatukur": "Meteran",
+        "nomor": "10143401400039",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5166973,
+        "sample_lat": -7.0364032,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "189532043c08c7db4699c4d2331e4193",
+        "dedup_keys": [
+          "persilpasifid:f031bf5d0f7a893ee0530b1d140a6468",
+          "nomor:10143401400039",
+          "geometry:189532043c08c7db4699c4d2331e4193"
+        ],
+        "source_key": "persilpasifid:f031bf5d0f7a893ee0530b1d140a6468"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51681053,
+              -7.03650478
+            ],
+            [
+              107.51671478,
+              -7.03648095
+            ],
+            [
+              107.51669717,
+              -7.03664528
+            ],
+            [
+              107.51675116,
+              -7.03666498
+            ],
+            [
+              107.51681053,
+              -7.03650478
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D571F5CD495EF96E063B516140AAB97",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 158,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5166973,
+        "sample_lat": -7.0366172,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "c031ce11a90ed9e542d9b27277dae058",
+        "dedup_keys": [
+          "persilpasifid:0d571f5cd495ef96e063b516140aab97",
+          "geometry:c031ce11a90ed9e542d9b27277dae058"
+        ],
+        "source_key": "persilpasifid:0d571f5cd495ef96e063b516140aab97"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51688058,
+              -7.03730476
+            ],
+            [
+              107.51688333,
+              -7.03727928
+            ],
+            [
+              107.5169685,
+              -7.03729073
+            ],
+            [
+              107.51697432,
+              -7.03722635
+            ],
+            [
+              107.5167629,
+              -7.03717859
+            ],
+            [
+              107.51675851,
+              -7.03720582
+            ],
+            [
+              107.51684276,
+              -7.03722048
+            ],
+            [
+              107.51683445,
+              -7.03729552
+            ],
+            [
+              107.51688058,
+              -7.03730476
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "5279DD4F7216463BE053141D0B0A4D31",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 153,
+        "tahun": 2017,
+        "nib": "04141",
+        "alatukur": null,
+        "nomor": "10143401102393",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5169129,
+        "sample_lat": -7.0372591,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "d7604919998c452f75727e7c13215dc7",
+        "dedup_keys": [
+          "nib:04141",
+          "persilpasifid:5279dd4f7216463be053141d0b0a4d31",
+          "nomor:10143401102393",
+          "geometry:d7604919998c452f75727e7c13215dc7"
+        ],
+        "source_key": "nib:04141"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51507155,
+              -7.02769403
+            ],
+            [
+              107.51508418,
+              -7.02762876
+            ],
+            [
+              107.51494639,
+              -7.02759802
+            ],
+            [
+              107.51492207,
+              -7.0276951
+            ],
+            [
+              107.51493868,
+              -7.02770479
+            ],
+            [
+              107.51493794,
+              -7.02772583
+            ],
+            [
+              107.51506344,
+              -7.02774583
+            ],
+            [
+              107.51507155,
+              -7.02769403
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C15260CA51E063B416140A776A",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 212,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5149725,
+        "sample_lat": -7.0276303,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "5174c7205ea5e5832a4ec7cecdf69115",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c15260ca51e063b416140a776a",
+          "geometry:5174c7205ea5e5832a4ec7cecdf69115"
+        ],
+        "source_key": "persilpasifid:0d08e4c15260ca51e063b416140a776a"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51681593,
+              -7.03668862
+            ],
+            [
+              107.5168943,
+              -7.03671722
+            ],
+            [
+              107.51692545,
+              -7.03665384
+            ],
+            [
+              107.51694798,
+              -7.03655774
+            ],
+            [
+              107.51688404,
+              -7.03652932
+            ],
+            [
+              107.51681593,
+              -7.03668862
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D571F5D0C36F220E063B416140AFF82",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 169,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5169129,
+        "sample_lat": -7.0366172,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "0290ad7af13356da6ce714202526aaf4",
+        "dedup_keys": [
+          "persilpasifid:0d571f5d0c36f220e063b416140aff82",
+          "geometry:0290ad7af13356da6ce714202526aaf4"
+        ],
+        "source_key": "persilpasifid:0d571f5d0c36f220e063b416140aff82"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51690251,
+              -7.0359676
+            ],
+            [
+              107.51688849,
+              -7.03596199
+            ],
+            [
+              107.51687016,
+              -7.036013
+            ],
+            [
+              107.51695245,
+              -7.0360434
+            ],
+            [
+              107.51697126,
+              -7.03599111
+            ],
+            [
+              107.51690251,
+              -7.0359676
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D571F5D3E43EF98E063B516140AD17A",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 58,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5169129,
+        "sample_lat": -7.0359752,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "bb885b6efc5251716a00cfb47532333b",
+        "dedup_keys": [
+          "persilpasifid:0d571f5d3e43ef98e063b516140ad17a",
+          "geometry:bb885b6efc5251716a00cfb47532333b"
+        ],
+        "source_key": "persilpasifid:0d571f5d3e43ef98e063b516140ad17a"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51697274,
+              -7.03587527
+            ],
+            [
+              107.51699997,
+              -7.03578427
+            ],
+            [
+              107.51687658,
+              -7.03574581
+            ],
+            [
+              107.51684689,
+              -7.0358364
+            ],
+            [
+              107.51697274,
+              -7.03587527
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D571F5D0C2BF220E063B416140AFF82",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 151,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5169129,
+        "sample_lat": -7.0357613,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "3ba5b8e989a3bb8fc8d2c3313944abd9",
+        "dedup_keys": [
+          "persilpasifid:0d571f5d0c2bf220e063b416140aff82",
+          "geometry:3ba5b8e989a3bb8fc8d2c3313944abd9"
+        ],
+        "source_key": "persilpasifid:0d571f5d0c2bf220e063b416140aff82"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51592234,
+              -7.02812606
+            ],
+            [
+              107.5158821,
+              -7.02838274
+            ],
+            [
+              107.51587137,
+              -7.02838158
+            ],
+            [
+              107.51583137,
+              -7.02866878
+            ],
+            [
+              107.51581081,
+              -7.02884184
+            ],
+            [
+              107.51602474,
+              -7.02885223
+            ],
+            [
+              107.5161348,
+              -7.02827924
+            ],
+            [
+              107.51614728,
+              -7.02809898
+            ],
+            [
+              107.51612894,
+              -7.02807618
+            ],
+            [
+              107.51610817,
+              -7.0280609
+            ],
+            [
+              107.51606646,
+              -7.02804292
+            ],
+            [
+              107.51604261,
+              -7.02815618
+            ],
+            [
+              107.51592234,
+              -7.02812606
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "748905017EB02953E053031D0B0A456E",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 2082,
+        "tahun": null,
+        "nib": "02917",
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5160505,
+        "sample_lat": -7.0282722,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "1742f49ed08e5a37536f9c0e82831f89",
+        "dedup_keys": [
+          "nib:02917",
+          "persilpasifid:748905017eb02953e053031d0b0a456e",
+          "geometry:1742f49ed08e5a37536f9c0e82831f89"
+        ],
+        "source_key": "nib:02917"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51615572,
+              -7.02724535
+            ],
+            [
+              107.51608889,
+              -7.02722732
+            ],
+            [
+              107.51601801,
+              -7.02748261
+            ],
+            [
+              107.51608574,
+              -7.027499
+            ],
+            [
+              107.51615572,
+              -7.02724535
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "98dd4cda9f7d44519bbe69186bb7b65f",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 224,
+        "tahun": 1999,
+        "nib": "01701",
+        "alatukur": null,
+        "nomor": "10143401100737",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5160505,
+        "sample_lat": -7.0274163,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "1343efdc30a46dbba70e6ca553040f2c",
+        "dedup_keys": [
+          "nib:01701",
+          "persilpasifid:98dd4cda9f7d44519bbe69186bb7b65f",
+          "nomor:10143401100737",
+          "geometry:1343efdc30a46dbba70e6ca553040f2c"
+        ],
+        "source_key": "nib:01701"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51585939,
+              -7.02787509
+            ],
+            [
+              107.5158896,
+              -7.02775601
+            ],
+            [
+              107.51582981,
+              -7.02774406
+            ],
+            [
+              107.51578743,
+              -7.02791894
+            ],
+            [
+              107.51584791,
+              -7.02792792
+            ],
+            [
+              107.51585939,
+              -7.02787509
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C29B0FCA53E063B416140A3E1A",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 131,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5158349,
+        "sample_lat": -7.0278442,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "04e498f650213fe94dfc0550234e1fb6",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c29b0fca53e063b416140a3e1a",
+          "geometry:04e498f650213fe94dfc0550234e1fb6"
+        ],
+        "source_key": "persilpasifid:0d08e4c29b0fca53e063b416140a3e1a"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51695055,
+              -7.02810268
+            ],
+            [
+              107.51687332,
+              -7.02843682
+            ],
+            [
+              107.51690193,
+              -7.02845176
+            ],
+            [
+              107.51708865,
+              -7.02850143
+            ],
+            [
+              107.517183,
+              -7.02816092
+            ],
+            [
+              107.51713074,
+              -7.02815366
+            ],
+            [
+              107.51695055,
+              -7.02810268
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D08E4C32789FDDCE063B516140ABC71",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 984,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5169129,
+        "sample_lat": -7.0282722,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "95dac8e7366a5f4149c794dd3d4c22af",
+        "dedup_keys": [
+          "persilpasifid:0d08e4c32789fddce063b516140abc71",
+          "geometry:95dac8e7366a5f4149c794dd3d4c22af"
+        ],
+        "source_key": "persilpasifid:0d08e4c32789fddce063b516140abc71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51671312,
+              -7.0367948
+            ],
+            [
+              107.51664759,
+              -7.03677392
+            ],
+            [
+              107.51661185,
+              -7.03688592
+            ],
+            [
+              107.5166758,
+              -7.03690579
+            ],
+            [
+              107.51671312,
+              -7.0367948
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "735C5C25950B96CEE053141D0B0ADA9D",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 97,
+        "tahun": 2018,
+        "nib": "02432",
+        "alatukur": null,
+        "nomor": "10143415101810",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5166973,
+        "sample_lat": -7.0368311,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "706fc35a371a0e0d600c311b5ec06325",
+        "dedup_keys": [
+          "nib:02432",
+          "persilpasifid:735c5c25950b96cee053141d0b0ada9d",
+          "nomor:10143415101810",
+          "geometry:706fc35a371a0e0d600c311b5ec06325"
+        ],
+        "source_key": "nib:02432"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51669913,
+              -7.0359928
+            ],
+            [
+              107.51671687,
+              -7.035942
+            ],
+            [
+              107.51661774,
+              -7.03590745
+            ],
+            [
+              107.51659986,
+              -7.03595868
+            ],
+            [
+              107.51669913,
+              -7.0359928
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "5ad6734740a746b5a607ddf4f6227b5d",
+        "nilai": null,
+        "tipehak": "Hak Milik",
+        "luas": 332,
+        "tahun": 1983,
+        "nib": "02805",
+        "alatukur": null,
+        "nomor": "10143401100252",
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5166973,
+        "sample_lat": -7.0359752,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "06de49c95d7b7b87c49822c1be9ac123",
+        "dedup_keys": [
+          "nib:02805",
+          "persilpasifid:5ad6734740a746b5a607ddf4f6227b5d",
+          "nomor:10143401100252",
+          "geometry:06de49c95d7b7b87c49822c1be9ac123"
+        ],
+        "source_key": "nib:02805"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51693111,
+              -7.03612263
+            ],
+            [
+              107.51690696,
+              -7.03618301
+            ],
+            [
+              107.51697615,
+              -7.03620817
+            ],
+            [
+              107.51700058,
+              -7.03614966
+            ],
+            [
+              107.51693111,
+              -7.03612263
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "0D571F5D0C35F220E063B416140AFF82",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 57,
+        "tahun": null,
+        "nib": null,
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": 0.5,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5169129,
+        "sample_lat": -7.0361892,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "7898187329f83751cce527f2ea51c1d9",
+        "dedup_keys": [
+          "persilpasifid:0d571f5d0c35f220e063b416140aff82",
+          "geometry:7898187329f83751cce527f2ea51c1d9"
+        ],
+        "source_key": "persilpasifid:0d571f5d0c35f220e063b416140aff82"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              107.51685924,
+              -7.03508152
+            ],
+            [
+              107.51682822,
+              -7.0351727
+            ],
+            [
+              107.51689861,
+              -7.03520017
+            ],
+            [
+              107.51692727,
+              -7.03510351
+            ],
+            [
+              107.51685924,
+              -7.03508152
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "persilpasifid": "CB1F865BD5D3BDCBE040A8C010017A79",
+        "nilai": null,
+        "tipehak": "Kosong",
+        "luas": 88,
+        "tahun": null,
+        "nib": "01472",
+        "alatukur": null,
+        "nomor": null,
+        "akurasibidang": null,
+        "sample_source": "SOREANG",
+        "sample_lon": 107.5169129,
+        "sample_lat": -7.0351193,
+        "kecamatan_id": 320437,
+        "kecamatan_nama": null,
+        "kelurahan_id": 3204372001,
+        "kelurahan_nama": "SOREANG",
+        "geometry_hash": "db234f61774fb4ac5b33b151c9b33ff2",
+        "dedup_keys": [
+          "nib:01472",
+          "persilpasifid:cb1f865bd5d3bdcbe040a8c010017a79",
+          "geometry:db234f61774fb4ac5b33b151c9b33ff2"
+        ],
+        "source_key": "nib:01472"
+      }
+    }
+  ]
+}

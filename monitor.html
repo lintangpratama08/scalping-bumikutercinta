@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scalp Bidang Dashboard</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  >
+  <style>
+    :root {
+      --bg: #efe7da;
+      --card: rgba(255, 251, 245, 0.95);
+      --ink: #1f2d2b;
+      --muted: #62706f;
+      --line: #d8c9b5;
+      --teal: #0f766e;
+      --orange: #c2410c;
+      --good: #166534;
+      --warn: #b45309;
+      --bad: #b91c1c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.12), transparent 24%),
+        radial-gradient(circle at top right, rgba(194, 65, 12, 0.12), transparent 22%),
+        linear-gradient(180deg, #f8f3ec 0%, var(--bg) 100%);
+    }
+    .wrap {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 24px 18px 36px;
+    }
+    .hero, .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 14px 40px rgba(56, 44, 27, 0.08);
+    }
+    .hero {
+      padding: 26px;
+      margin-bottom: 18px;
+    }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.12);
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(30px, 4vw, 48px); line-height: 1.05; }
+    .sub {
+      margin-top: 10px;
+      color: var(--muted);
+      max-width: 900px;
+      font-size: 16px;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 18px;
+    }
+    .stack {
+      display: grid;
+      gap: 18px;
+    }
+    .panel { padding: 20px; }
+    .form-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    label {
+      display: grid;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    input, select {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 14px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--ink);
+      font-weight: 600;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+    .toggle input {
+      width: auto;
+      transform: scale(1.15);
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-weight: 700;
+      cursor: pointer;
+      background: var(--teal);
+      color: white;
+    }
+    button.alt {
+      background: white;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .status {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 14px;
+      min-height: 20px;
+    }
+    .status.good { color: var(--good); }
+    .status.warn { color: var(--warn); }
+    .status.bad { color: var(--bad); }
+    #map {
+      height: 640px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      margin-top: 14px;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .stat {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: white;
+    }
+    .stat .label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .stat .value {
+      margin-top: 6px;
+      font-size: 26px;
+      font-weight: 700;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 14px;
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 10px 8px;
+      border-bottom: 1px solid #eee1d2;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    .tips {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    code, pre {
+      font-family: Consolas, monospace;
+    }
+    pre {
+      margin: 0;
+      padding: 14px;
+      border-radius: 14px;
+      background: #1d2628;
+      color: #f8f4ea;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 13px;
+    }
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      #map { height: 420px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Scalp Bidang Dynamic Polygon</div>
+      <h1>Pilih wilayah dari database, lihat polygon, lalu scraping di dalam area itu.</h1>
+      <p class="sub">Dashboard ini membaca polygon dari tabel <code>data.tb_kecamatan_geo</code> dan <code>data.tb_kelurahan_geo</code>, menampilkan batas wilayah di Leaflet, lalu menjalankan scraper untuk area yang dipilih.</p>
+    </section>
+
+    <div class="layout">
+      <div class="stack">
+        <section class="panel">
+          <h2>Filter Wilayah</h2>
+          <div class="form-grid">
+            <label>Level Wilayah
+              <select id="level">
+                <option value="kecamatan">Kecamatan</option>
+                <option value="kelurahan">Kelurahan</option>
+              </select>
+            </label>
+
+            <label id="kecamatanWrap" style="display:none">Filter Kecamatan
+              <select id="kecamatanFilter">
+                <option value="">Pilih kecamatan</option>
+              </select>
+            </label>
+
+            <label>Pilih Polygon
+              <select id="areaSelect">
+                <option value="">Memuat data wilayah...</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button id="showPolygon">Tampilkan Polygon</button>
+            <button id="loadLatest" class="alt">Load Hasil Terakhir</button>
+          </div>
+          <p class="status" id="filterStatus"></p>
+        </section>
+
+        <section class="panel">
+          <h2>Jalankan Scrape</h2>
+          <div class="form-grid">
+            <label>Coverage
+              <select id="coverage">
+                <option value="balanced">balanced</option>
+                <option value="aggressive" selected>aggressive</option>
+                <option value="saturation">saturation</option>
+                <option value="bhumi-full">bhumi-full</option>
+              </select>
+            </label>
+
+            <div class="row">
+              <label>Limit
+                <input id="limit" type="number" min="0" value="0">
+              </label>
+              <label>Concurrency
+                <input id="concurrency" type="number" min="1" value="12">
+              </label>
+            </div>
+
+            <div class="row">
+              <label>Timeout
+                <input id="timeout" type="number" min="5" step="1" value="30">
+              </label>
+              <label>Output Name
+                <input id="outputName" type="text" value="dashboard_run">
+              </label>
+            </div>
+
+            <label class="toggle">
+              <input id="exportFiles" type="checkbox" checked>
+              Simpan GeoJSON, CSV, dan summary
+            </label>
+
+            <label class="toggle">
+              <input id="noPostgres" type="checkbox">
+              Jangan insert ke PostgreSQL
+            </label>
+          </div>
+
+          <div class="actions">
+            <button id="runScrape">Run Scrape Polygon Ini</button>
+          </div>
+          <p class="status" id="runStatus"></p>
+        </section>
+
+        <section class="panel">
+          <h2>Cara Jalankan Dashboard</h2>
+          <pre>cd c:\laragon\www\bandungkab\scalp-bidang
+python run.py serve --host 127.0.0.1 --port 5055
+
+buka:
+http://127.0.0.1:5055/</pre>
+        </section>
+      </div>
+
+      <div class="stack">
+        <section class="panel">
+          <h2>Peta Wilayah dan Hasil</h2>
+          <div class="stats">
+            <div class="stat"><div class="label">Area</div><div class="value" id="statArea">-</div></div>
+            <div class="stat"><div class="label">Total Bidang</div><div class="value" id="statFeatures">-</div></div>
+            <div class="stat"><div class="label">Requests</div><div class="value" id="statRequests">-</div></div>
+            <div class="stat"><div class="label">Failed</div><div class="value" id="statFailed">-</div></div>
+            <div class="stat"><div class="label">Coverage</div><div class="value" id="statCoverage">-</div></div>
+            <div class="stat"><div class="label">Inserted</div><div class="value" id="statInserted">-</div></div>
+            <div class="stat"><div class="label">Progress</div><div class="value" id="statProgress">-</div></div>
+          </div>
+          <div id="map"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Hasil Run</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>Area ID</th>
+                <th>Features</th>
+                <th>Requests</th>
+                <th>Failed</th>
+                <th>GeoJSON</th>
+              </tr>
+            </thead>
+            <tbody id="resultRows">
+              <tr><td colspan="6">Belum ada hasil run.</td></tr>
+            </tbody>
+          </table>
+          <div class="tips">
+            <p>Polygon hijau menunjukkan wilayah terpilih dari database.</p>
+            <p>Polygon oranye menunjukkan hasil bidang dari file GeoJSON output scrape.</p>
+            <p>Mode kelurahan akan menampilkan filter kecamatan dulu supaya pilihan area lebih ringan.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script>
+    const refs = {
+      level: document.getElementById("level"),
+      kecamatanWrap: document.getElementById("kecamatanWrap"),
+      kecamatanFilter: document.getElementById("kecamatanFilter"),
+      areaSelect: document.getElementById("areaSelect"),
+      showPolygon: document.getElementById("showPolygon"),
+      loadLatest: document.getElementById("loadLatest"),
+      runScrape: document.getElementById("runScrape"),
+      filterStatus: document.getElementById("filterStatus"),
+      runStatus: document.getElementById("runStatus"),
+      coverage: document.getElementById("coverage"),
+      limit: document.getElementById("limit"),
+      concurrency: document.getElementById("concurrency"),
+      timeout: document.getElementById("timeout"),
+      outputName: document.getElementById("outputName"),
+      exportFiles: document.getElementById("exportFiles"),
+      noPostgres: document.getElementById("noPostgres"),
+      statArea: document.getElementById("statArea"),
+      statFeatures: document.getElementById("statFeatures"),
+      statRequests: document.getElementById("statRequests"),
+      statFailed: document.getElementById("statFailed"),
+      statCoverage: document.getElementById("statCoverage"),
+      statInserted: document.getElementById("statInserted"),
+      statProgress: document.getElementById("statProgress"),
+      resultRows: document.getElementById("resultRows"),
+    };
+
+    const map = L.map("map").setView([-7.03, 107.58], 10);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: "&copy; OpenStreetMap",
+    }).addTo(map);
+
+    let selectedLayer = null;
+    let storedLayer = null;
+    let parcelLayer = null;
+    let activeJobId = null;
+    let activeJobTimer = null;
+
+    function setStatus(target, text, kind = "") {
+      target.textContent = text;
+      target.className = "status " + kind;
+    }
+
+    function getSelectedAreaId() {
+      return Number(refs.areaSelect.value || 0);
+    }
+
+    function getSelectedAreaName() {
+      return refs.areaSelect.options[refs.areaSelect.selectedIndex]?.text || "-";
+    }
+
+    async function fetchJson(url, options) {
+      const response = await fetch(url, options);
+      const contentType = response.headers.get("content-type") || "";
+      const payload = contentType.includes("application/json") ? await response.json() : null;
+      if (!response.ok) {
+        const message = payload?.error || "Request gagal";
+        throw new Error(message);
+      }
+      return payload;
+    }
+
+    function fillSelect(select, items, emptyLabel) {
+      select.innerHTML = "";
+      const first = document.createElement("option");
+      first.value = "";
+      first.textContent = emptyLabel;
+      select.appendChild(first);
+      for (const item of items) {
+        const option = document.createElement("option");
+        option.value = item.id;
+        option.textContent = item.nama;
+        option.dataset.kecamatanId = item.id_kec || "";
+        select.appendChild(option);
+      }
+    }
+
+    async function loadKecamatanOptions() {
+      const payload = await fetchJson("/api/areas?level=kecamatan");
+      fillSelect(refs.kecamatanFilter, payload.items, "Pilih kecamatan");
+    }
+
+    async function loadAreas() {
+      const level = refs.level.value;
+      refs.areaSelect.innerHTML = '<option value="">Memuat area...</option>';
+      let url = `/api/areas?level=${encodeURIComponent(level)}`;
+      if (level === "kelurahan") {
+        refs.kecamatanWrap.style.display = "block";
+        const kecId = refs.kecamatanFilter.value;
+        if (!kecId) {
+          fillSelect(refs.areaSelect, [], "Pilih kecamatan dulu");
+          return;
+        }
+        url += `&kecamatan_id=${encodeURIComponent(kecId)}`;
+      } else {
+        refs.kecamatanWrap.style.display = "none";
+      }
+      const payload = await fetchJson(url);
+      fillSelect(refs.areaSelect, payload.items, "Pilih polygon wilayah");
+      setStatus(refs.filterStatus, `${payload.items.length} wilayah siap dipilih`, "good");
+    }
+
+    async function showSelectedPolygon() {
+      const areaId = getSelectedAreaId();
+      if (!areaId) {
+        setStatus(refs.filterStatus, "Pilih area dulu", "warn");
+        return;
+      }
+      const level = refs.level.value;
+      const payload = await fetchJson(`/api/area-geojson?level=${encodeURIComponent(level)}&area_id=${areaId}`);
+      if (selectedLayer) map.removeLayer(selectedLayer);
+      selectedLayer = L.geoJSON(payload, {
+        style: { color: "#0f766e", weight: 3, fillColor: "#14b8a6", fillOpacity: 0.18 }
+      }).addTo(map);
+      await drawStoredParcels(level, areaId);
+      fitKnownLayers();
+      refs.statArea.textContent = getSelectedAreaName();
+      setStatus(refs.filterStatus, `Polygon ${getSelectedAreaName()} berhasil dimuat`, "good");
+    }
+
+    async function showPolygonById(level, areaId) {
+      if (!areaId) return;
+      const payload = await fetchJson(`/api/area-geojson?level=${encodeURIComponent(level)}&area_id=${areaId}`);
+      if (selectedLayer) map.removeLayer(selectedLayer);
+      selectedLayer = L.geoJSON(payload, {
+        style: { color: "#0f766e", weight: 3, fillColor: "#14b8a6", fillOpacity: 0.18 }
+      }).addTo(map);
+      await drawStoredParcels(level, areaId);
+      fitKnownLayers();
+    }
+
+    function renderResultTable(items) {
+      if (!Array.isArray(items) || !items.length) {
+        refs.resultRows.innerHTML = '<tr><td colspan="6">Belum ada hasil run.</td></tr>';
+        return;
+      }
+      refs.resultRows.innerHTML = items.map((item) => {
+        const geojson = item.outputs?.geojson;
+        const link = geojson ? `<a href="${toOutputUrl(geojson)}" target="_blank">buka</a>` : "-";
+        return `
+          <tr>
+            <td>${item.area || "-"}</td>
+            <td>${item.area_id || "-"}</td>
+            <td>${item.features || 0}</td>
+            <td>${item.requests_total || 0}</td>
+            <td>${item.requests_failed || 0}</td>
+            <td>${link}</td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    function updateSummary(result) {
+      const first = Array.isArray(result.results) && result.results.length ? result.results[0] : {};
+      refs.statArea.textContent = first.area || refs.statArea.textContent;
+      refs.statFeatures.textContent = result.features_total ?? "-";
+      refs.statRequests.textContent = first.requests_total ?? "-";
+      refs.statFailed.textContent = first.requests_failed ?? "-";
+      refs.statCoverage.textContent = result.coverage ?? "-";
+      refs.statInserted.textContent = result.inserted_total ?? "-";
+      const done = Number(first.points_done || 0);
+      const total = Number(first.points_total || 0);
+      refs.statProgress.textContent = total > 0 ? `${done}/${total}` : "-";
+      renderResultTable(result.results);
+    }
+
+    function toOutputUrl(pathText) {
+      const marker = "\\output\\";
+      const normalized = String(pathText).replaceAll("/", "\\");
+      const idx = normalized.toLowerCase().indexOf(marker);
+      if (idx === -1) return "#";
+      const fileName = normalized.slice(idx + marker.length).replaceAll("\\", "/");
+      return `/output/${fileName}`;
+    }
+
+    async function drawOutputGeojson(pathText) {
+      const url = toOutputUrl(pathText);
+      if (url === "#") return;
+      const payload = await fetchJson(url);
+      if (parcelLayer) map.removeLayer(parcelLayer);
+      parcelLayer = L.geoJSON(payload, {
+        style: { color: "#c2410c", weight: 2, fillColor: "#fb923c", fillOpacity: 0.25 }
+      }).addTo(map);
+      fitKnownLayers();
+    }
+
+    async function drawStoredParcels(level, areaId) {
+      const payload = await fetchJson(`/api/stored-parcels?level=${encodeURIComponent(level)}&area_id=${areaId}&limit=3000`);
+      if (storedLayer) map.removeLayer(storedLayer);
+      storedLayer = L.geoJSON(payload, {
+        style: { color: "#1d4ed8", weight: 2, fillColor: "#60a5fa", fillOpacity: 0.12 }
+      }).addTo(map);
+    }
+
+    function fitKnownLayers() {
+      const layers = [selectedLayer, storedLayer, parcelLayer].filter(Boolean);
+      if (!layers.length) return;
+      const group = L.featureGroup(layers);
+      if (group.getLayers().length) {
+        map.fitBounds(group.getBounds(), { padding: [20, 20] });
+      }
+    }
+
+    async function pollJob(jobId) {
+      try {
+        const result = await fetchJson(`/api/jobs/${jobId}?ts=` + Date.now());
+        updateSummary(result);
+        const geojson = result.results?.[0]?.outputs?.geojson;
+        if (geojson && result.status === "completed") {
+          await drawOutputGeojson(geojson);
+        }
+        if (result.status === "completed") {
+          clearInterval(activeJobTimer);
+          activeJobTimer = null;
+          activeJobId = null;
+          setStatus(refs.runStatus, "Scrape selesai dan data sudah masuk bertahap", "good");
+        } else if (result.status === "failed") {
+          clearInterval(activeJobTimer);
+          activeJobTimer = null;
+          activeJobId = null;
+          setStatus(refs.runStatus, result.message || "Job gagal", "bad");
+        } else {
+          setStatus(refs.runStatus, result.message || "Scraping sedang berjalan", "warn");
+        }
+      } catch (error) {
+        setStatus(refs.runStatus, error.message, "bad");
+      }
+    }
+
+    async function runScrape() {
+      const areaId = getSelectedAreaId();
+      if (!areaId) {
+        setStatus(refs.runStatus, "Pilih polygon dulu sebelum scraping", "warn");
+        return;
+      }
+      setStatus(refs.runStatus, "Job dikirim, memulai scraping background...", "warn");
+      const payload = {
+        level: refs.level.value,
+        area_id: areaId,
+        coverage: refs.coverage.value,
+        limit: Number(refs.limit.value || 0),
+        concurrency: Number(refs.concurrency.value || 12),
+        timeout: Number(refs.timeout.value || 30),
+        output_name: refs.outputName.value || "dashboard_run",
+        export_files: refs.exportFiles.checked,
+        no_postgres: refs.noPostgres.checked,
+      };
+      try {
+        const result = await fetchJson("/api/scrape", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        activeJobId = result.job_id;
+        if (activeJobTimer) {
+          clearInterval(activeJobTimer);
+        }
+        await pollJob(activeJobId);
+        activeJobTimer = setInterval(() => {
+          if (activeJobId) {
+            pollJob(activeJobId);
+          }
+        }, 1500);
+      } catch (error) {
+        setStatus(refs.runStatus, error.message, "bad");
+      }
+    }
+
+    async function loadLatestRun() {
+      try {
+        const result = await fetchJson("/api/latest-run?ts=" + Date.now());
+        updateSummary(result);
+        const areaId = result.results?.[0]?.area_id;
+        const areaLevel = result.results?.[0]?.area_level;
+        if (areaLevel && refs.level.value !== areaLevel) {
+          refs.level.value = areaLevel;
+          if (areaLevel === "kelurahan") {
+            await loadKecamatanOptions();
+          }
+          await loadAreas();
+        }
+        if (areaId) {
+          refs.areaSelect.value = String(areaId);
+          await showPolygonById(areaLevel || refs.level.value, areaId);
+        }
+        const geojson = result.results?.[0]?.outputs?.geojson;
+        if (geojson) {
+          await drawOutputGeojson(geojson);
+        }
+        setStatus(refs.runStatus, "Hasil run terakhir berhasil dimuat", "good");
+      } catch (error) {
+        setStatus(refs.runStatus, error.message, "warn");
+      }
+    }
+
+    refs.level.addEventListener("change", async () => {
+      if (refs.level.value === "kelurahan") {
+        await loadKecamatanOptions();
+      }
+      await loadAreas();
+    });
+    refs.kecamatanFilter.addEventListener("change", loadAreas);
+    refs.showPolygon.addEventListener("click", showSelectedPolygon);
+    refs.runScrape.addEventListener("click", runScrape);
+    refs.loadLatest.addEventListener("click", loadLatestRun);
+
+    async function bootstrap() {
+      await loadKecamatanOptions();
+      await loadAreas();
+      await loadLatestRun();
+    }
+
+    bootstrap().catch((error) => {
+      setStatus(refs.filterStatus, error.message, "bad");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "points_total": 7702,
+  "points_done": 7702,
+  "requests_total": 7702,
+  "requests_failed": 0,
+  "features_seen": 6270,
+  "features_written": 45,
+  "duplicate_features": 6225,
+  "errors": [],
+  "result": {
+    "area_id": 3204162005,
+    "area_level": "kelurahan",
+    "area": "BAROS",
+    "points_total": 7702,
+    "points_done": 7702,
+    "requests_total": 7702,
+    "requests_failed": 0,
+    "features": 45,
+    "inserted": 0,
+    "duplicates": 6225,
+    "existing_hashes": 6472,
+    "errors": [],
+    "outputs": {},
+    "status": "completed"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "areas": 1,
+  "features_total": 811,
+  "inserted_total": 804,
+  "coverage": "aggressive",
+  "spacing_meters": 70.0,
+  "query_half_size_meters": 30.0,
+  "feature_count": 60,
+  "repeat_passes": 2,
+  "concurrency": 16,
+  "sampling_offsets": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.5,
+      0.0
+    ],
+    [
+      0.0,
+      0.5
+    ],
+    [
+      0.5,
+      0.5
+    ]
+  ],
+  "results": [
+    {
+      "area_id": 3204162006,
+      "area_level": "kelurahan",
+      "area": "MANGUNJAYA",
+      "points_total": 13094,
+      "points_done": 13094,
+      "requests_total": 13094,
+      "requests_failed": 0,
+      "features": 811,
+      "inserted": 804,
+      "duplicates": 2111,
+      "existing_hashes": 0,
+      "errors": [],
+      "outputs": {},
+      "status": "completed"
+    }
+  ],
+  "status": "completed"
+}
