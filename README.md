@@ -12,6 +12,23 @@ Fokus engine ini:
 
 ## Cara pakai
 
+Konfigurasi database dibaca dari file `.env` di root proyek. Isi default sudah disediakan, dan bisa disalin ulang dari `.env.example` jika perlu:
+
+```powershell
+copy .env.example .env
+```
+
+Variabel utama:
+
+- `SCALP_DB_HOST`
+- `SCALP_DB_PORT`
+- `SCALP_DB_USER`
+- `SCALP_DB_PASSWORD`
+- `SCALP_DB_NAME`
+- `SCALP_DB_TABLE`
+
+Alias `DB_HOST`, `DB_PORT`, `DB_USERNAME`, `DB_PASSWORD`, dan `DB_DATABASE` juga didukung jika ingin memakai gaya env umum.
+
 ```powershell
 cd c:\laragon\www\bandungkab\scalp-bidang
 python run.py list-areas --level kecamatan
