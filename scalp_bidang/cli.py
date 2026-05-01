@@ -17,7 +17,11 @@ def build_parser() -> argparse.ArgumentParser:
     scrape.add_argument("--polygon-name-field", default="nama", help="Field nama area")
     scrape.add_argument("--areas", default=None, help="Nama area dipisah koma")
     scrape.add_argument("--area-ids", default=None, help="ID area dipisah koma")
-    scrape.add_argument("--coverage", choices=["balanced", "aggressive", "saturation", "bhumi-full"], default="aggressive")
+    scrape.add_argument(
+        "--coverage",
+        choices=["balanced", "aggressive", "saturation", "bhumi-full", "overpower"],
+        default="overpower",
+    )
     scrape.add_argument("--limit", type=int, default=0, help="Batas per area saat mode area tunggal")
     scrape.add_argument("--limit-per-area", type=int, default=0, help="Batas per area untuk batch")
     scrape.add_argument("--output-dir", default=str(Path("output")), help="Folder output")

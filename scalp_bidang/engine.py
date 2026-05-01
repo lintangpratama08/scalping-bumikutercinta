@@ -15,10 +15,13 @@ from .geometry import (
     build_getfeatureinfo_url,
     compute_bounds,
     compute_ring_centroid,
+    geometry_to_polygons,
     geometry_hash,
     lonlat_to_web_mercator,
+    move_point_towards,
     normalize_identifier,
     point_in_polygon_area,
+    sample_ring_points,
     web_mercator_to_lonlat,
 )
 from .models import ParcelFeature, PolygonArea, RunStats, SamplePoint
@@ -33,6 +36,10 @@ class CoveragePreset:
     repeat_passes: int
     concurrency: int
     offsets: tuple[tuple[float, float], ...]
+    perimeter_spacing_factor: float = 0.75
+    perimeter_pull_ratio: float = 0.18
+    adaptive_seed_spacing_meters: float = 18.0
+    adaptive_pull_ratio: float = 0.24
 
 
 COVERAGE_PRESETS = {
@@ -77,13 +84,55 @@ COVERAGE_PRESETS = {
             (0.00, 0.75), (0.25, 0.75), (0.50, 0.75), (0.75, 0.75),
         ),
     ),
+    "overpower": CoveragePreset(
+        16.0,
+        48.0,
+        220,
+        5,
+        28,
+        (
+            (0.00, 0.00), (0.20, 0.00), (0.40, 0.00), (0.60, 0.00), (0.80, 0.00),
+            (0.00, 0.20), (0.20, 0.20), (0.40, 0.20), (0.60, 0.20), (0.80, 0.20),
+            (0.00, 0.40), (0.20, 0.40), (0.40, 0.40), (0.60, 0.40), (0.80, 0.40),
+            (0.00, 0.60), (0.20, 0.60), (0.40, 0.60), (0.60, 0.60), (0.80, 0.60),
+            (0.00, 0.80), (0.20, 0.80), (0.40, 0.80), (0.60, 0.80), (0.80, 0.80),
+        ),
+        perimeter_spacing_factor=0.45,
+        perimeter_pull_ratio=0.22,
+        adaptive_seed_spacing_meters=10.0,
+        adaptive_pull_ratio=0.30,
+    ),
 }
+
+
+def append_sample_point(
+    points: list[SamplePoint],
+    seen_points: set[tuple[str, float, float]],
+    area_name: str,
+    longitude: float,
+    latitude: float,
+    front: bool = False,
+) -> bool:
+    rounded_lon = round(longitude, 7)
+    rounded_lat = round(latitude, 7)
+    key = (area_name, rounded_lon, rounded_lat)
+    if key in seen_points:
+        return False
+    seen_points.add(key)
+    sample = SamplePoint(area_name=area_name, longitude=rounded_lon, latitude=rounded_lat)
+    if front:
+        points.insert(0, sample)
+    else:
+        points.append(sample)
+    return True
 
 
 def build_sample_points(
     areas: list[PolygonArea],
     spacing_meters: float,
     offsets: tuple[tuple[float, float], ...],
+    perimeter_spacing_factor: float = 0.75,
+    perimeter_pull_ratio: float = 0.18,
 ) -> list[SamplePoint]:
     points: list[SamplePoint] = []
     seen_points: set[tuple[str, float, float]] = set()
@@ -111,37 +160,63 @@ def build_sample_points(
                     while y <= max_y + 1e-9:
                         longitude, latitude = web_mercator_to_lonlat(x, y)
                         if point_in_polygon_area(longitude, latitude, [polygon_rings]):
-                            rounded_lon = round(longitude, 7)
-                            rounded_lat = round(latitude, 7)
-                            key = (area.name, rounded_lon, rounded_lat)
-                            if key not in seen_points:
-                                seen_points.add(key)
-                                points.append(
-                                    SamplePoint(
-                                        area_name=area.name,
-                                        longitude=rounded_lon,
-                                        latitude=rounded_lat,
-                                    )
-                                )
+                            append_sample_point(points, seen_points, area.name, longitude, latitude)
                         y += spacing_meters
                     x += spacing_meters
 
+            perimeter_spacing = max(spacing_meters * perimeter_spacing_factor, 6.0)
+            for edge_lon, edge_lat in sample_ring_points(outer_ring, perimeter_spacing):
+                inner_lon, inner_lat = move_point_towards(
+                    edge_lon,
+                    edge_lat,
+                    center_lon,
+                    center_lat,
+                    perimeter_pull_ratio,
+                )
+                append_sample_point(points, seen_points, area.name, inner_lon, inner_lat)
+
         # Selalu tambah centroid tiap komponen agar area besar cepat punya titik awal bernilai.
         for center_lon, center_lat in polygon_centers:
-            rounded_lon = round(center_lon, 7)
-            rounded_lat = round(center_lat, 7)
-            key = (area.name, rounded_lon, rounded_lat)
-            if key not in seen_points:
-                seen_points.add(key)
-                points.insert(
-                    0,
-                    SamplePoint(
-                        area_name=area.name,
-                        longitude=rounded_lon,
-                        latitude=rounded_lat,
-                    ),
-                )
+            append_sample_point(points, seen_points, area.name, center_lon, center_lat, front=True)
     return points
+
+
+def build_adaptive_sample_points(
+    area: PolygonArea,
+    features: list[ParcelFeature],
+    spacing_meters: float,
+    pull_ratio: float,
+    seen_points: set[tuple[str, float, float]],
+) -> list[SamplePoint]:
+    adaptive_points: list[SamplePoint] = []
+
+    for feature in features:
+        geometry = feature.geometry or {}
+        try:
+            polygons = geometry_to_polygons(geometry)
+        except ValueError:
+            continue
+
+        for polygon_rings in polygons:
+            if not polygon_rings:
+                continue
+            outer_ring = polygon_rings[0]
+            center_lon, center_lat = compute_ring_centroid(outer_ring)
+            append_sample_point(adaptive_points, seen_points, area.name, center_lon, center_lat)
+
+            seed_spacing = max(spacing_meters, 6.0)
+            for edge_lon, edge_lat in sample_ring_points(outer_ring, seed_spacing):
+                inner_lon, inner_lat = move_point_towards(
+                    edge_lon,
+                    edge_lat,
+                    center_lon,
+                    center_lat,
+                    pull_ratio,
+                )
+                if point_in_polygon_area(inner_lon, inner_lat, area.polygons):
+                    append_sample_point(adaptive_points, seen_points, area.name, inner_lon, inner_lat)
+
+    return adaptive_points
 
 
 def normalize_feature(raw_feature: dict[str, Any], point: SamplePoint, area: PolygonArea) -> ParcelFeature:
@@ -194,8 +269,10 @@ async def fetch_payload(
 ) -> dict[str, Any]:
     query_profiles = [
         (query_half_size_meters, feature_count),
-        (query_half_size_meters * 1.2, max(feature_count, 60)),
-        (query_half_size_meters * 0.7, max(20, feature_count // 2)),
+        (query_half_size_meters * 1.2, max(feature_count, 90)),
+        (query_half_size_meters * 1.45, max(feature_count + 80, int(feature_count * 1.4))),
+        (query_half_size_meters * 0.7, max(30, feature_count // 2)),
+        (query_half_size_meters * 0.45, max(20, feature_count // 3)),
     ]
     last_error: Exception | None = None
 
@@ -227,12 +304,15 @@ async def scrape_points(
     query_half_size_meters: float,
     feature_count: int,
     repeat_passes: int,
+    adaptive_seed_spacing_meters: float,
+    adaptive_pull_ratio: float,
     limit: int,
     existing_hashes: set[str] | None = None,
     on_chunk_complete: Callable[[RunStats, list[ParcelFeature]], None] | None = None,
 ) -> tuple[list[ParcelFeature], RunStats]:
     seen = set(existing_hashes or set())
-    stats = RunStats(points_total=len(points) * repeat_passes)
+    seen_point_keys = {(point.area_name, point.longitude, point.latitude) for point in points}
+    stats = RunStats(points_total=0)
     collected: list[ParcelFeature] = []
     pending_chunk_features: list[ParcelFeature] = []
     semaphore = asyncio.Semaphore(http_config.concurrency)
@@ -276,11 +356,16 @@ async def scrape_points(
                 stats.points_done += 1
 
         chunk_size = max(http_config.concurrency * 3, 24)
+        pass_points = list(points)
         for _pass in range(repeat_passes):
-            for start_index in range(0, len(points), chunk_size):
+            if not pass_points:
+                break
+            stats.points_total += len(pass_points)
+            pass_feature_start = len(collected)
+            for start_index in range(0, len(pass_points), chunk_size):
                 if limit > 0 and len(collected) >= limit:
                     break
-                chunk_points = points[start_index:start_index + chunk_size]
+                chunk_points = pass_points[start_index:start_index + chunk_size]
                 tasks = [asyncio.create_task(worker(point)) for point in chunk_points]
                 if tasks:
                     await asyncio.gather(*tasks)
@@ -290,6 +375,14 @@ async def scrape_points(
                     pending_chunk_features.clear()
             if limit > 0 and len(collected) >= limit:
                 break
+            newly_collected = collected[pass_feature_start:]
+            pass_points = build_adaptive_sample_points(
+                area=area,
+                features=newly_collected,
+                spacing_meters=adaptive_seed_spacing_meters,
+                pull_ratio=adaptive_pull_ratio,
+                seen_points=seen_point_keys,
+            )
 
     return collected, stats
 
@@ -366,7 +459,13 @@ def run_scrape(
     per_area_results: list[dict[str, Any]] = []
 
     for area in areas:
-        points = build_sample_points([area], preset.spacing_meters, preset.offsets)
+        points = build_sample_points(
+            [area],
+            preset.spacing_meters,
+            preset.offsets,
+            perimeter_spacing_factor=preset.perimeter_spacing_factor,
+            perimeter_pull_ratio=preset.perimeter_pull_ratio,
+        )
         existing_hashes = load_existing_hashes(postgres, area.name) if (postgres_enabled and skip_existing) else set()
         area_limit = limit if limit > 0 else limit_per_area
         inserted_so_far = 0
@@ -434,6 +533,8 @@ def run_scrape(
                 query_half_size_meters=preset.query_half_size_meters,
                 feature_count=preset.feature_count,
                 repeat_passes=preset.repeat_passes,
+                adaptive_seed_spacing_meters=preset.adaptive_seed_spacing_meters,
+                adaptive_pull_ratio=preset.adaptive_pull_ratio,
                 limit=area_limit,
                 existing_hashes=existing_hashes,
                 on_chunk_complete=emit_progress,

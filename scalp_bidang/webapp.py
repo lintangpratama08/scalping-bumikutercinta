@@ -160,7 +160,7 @@ def create_app() -> Flask:
         limit = int(payload.get("limit") or 0)
         export_files = bool(payload.get("export_files", True))
         no_postgres = bool(payload.get("no_postgres", False))
-        coverage = str(payload.get("coverage") or "aggressive").strip().lower()
+        coverage = str(payload.get("coverage") or "overpower").strip().lower()
         output_name = str(payload.get("output_name") or f"ui_{level}_{area_id}").strip()
         concurrency = int(payload.get("concurrency") or 12)
         timeout = float(payload.get("timeout") or 30.0)

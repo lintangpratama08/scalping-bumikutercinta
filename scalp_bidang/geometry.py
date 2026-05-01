@@ -72,6 +72,49 @@ def compute_polygon_radius_meters(ring: list[tuple[float, float]], center_lon: f
     return max_distance or 1.0
 
 
+def move_point_towards(
+    longitude: float,
+    latitude: float,
+    target_longitude: float,
+    target_latitude: float,
+    ratio: float,
+) -> tuple[float, float]:
+    ratio = max(0.0, min(1.0, ratio))
+    source_x, source_y = lonlat_to_web_mercator(longitude, latitude)
+    target_x, target_y = lonlat_to_web_mercator(target_longitude, target_latitude)
+    return web_mercator_to_lonlat(
+        source_x + ((target_x - source_x) * ratio),
+        source_y + ((target_y - source_y) * ratio),
+    )
+
+
+def sample_ring_points(
+    ring: list[tuple[float, float]],
+    spacing_meters: float,
+) -> list[tuple[float, float]]:
+    if len(ring) < 2:
+        return list(ring)
+
+    sampled: list[tuple[float, float]] = []
+    closed_ring = list(ring)
+    if closed_ring[0] != closed_ring[-1]:
+        closed_ring.append(closed_ring[0])
+
+    for start, end in zip(closed_ring, closed_ring[1:]):
+        start_x, start_y = lonlat_to_web_mercator(*start)
+        end_x, end_y = lonlat_to_web_mercator(*end)
+        segment_length = math.hypot(end_x - start_x, end_y - start_y)
+        steps = max(1, int(math.ceil(segment_length / max(spacing_meters, 1.0))))
+        for index in range(steps):
+            ratio = index / steps
+            point_x = start_x + ((end_x - start_x) * ratio)
+            point_y = start_y + ((end_y - start_y) * ratio)
+            sampled.append(web_mercator_to_lonlat(point_x, point_y))
+
+    sampled.append(closed_ring[-1])
+    return sampled
+
+
 def geometry_to_rings(geometry: dict[str, Any]) -> list[list[tuple[float, float]]]:
     geometry_type = geometry.get("type")
     coordinates = geometry.get("coordinates") or []
