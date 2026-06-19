@@ -9,6 +9,7 @@ Fokus engine ini:
 - adaptive query profile supaya satu hit bisa menarik lebih banyak bidang
 - dedup geometri di memori dan opsional skip data yang sudah ada di PostgreSQL
 - output ke PostgreSQL, GeoJSON, CSV, dan JSON summary
+- mode live bridge ke exporter BHUMI polygon untuk kelurahan/kecamatan saat endpoint publik gagal
 
 ## Cara pakai
 
@@ -48,7 +49,9 @@ python run.py serve --host 127.0.0.1 --port 5055
 
 ## Catatan
 
-- Sumber data tetap memakai endpoint publik BHUMI `GetFeatureInfo`.
+- Untuk `polygon_db_source=kelurahan` atau `kecamatan`, engine akan memakai jalur live bridge ke helper BHUMI agar polygon GeoJSON bisa di-resolve dari `getBidang`.
+- Untuk source lain, engine tetap bisa memakai endpoint publik BHUMI `GetFeatureInfo`.
 - Engine baru memaksimalkan jumlah data per sweep dengan concurrency async, ukuran query adaptif, perimeter sweep, dan adaptive reseed multi-pass.
 - Untuk monitoring yang lebih mudah, jalankan `python run.py serve` lalu buka dashboard Leaflet di `http://127.0.0.1:5055/`.
 - File `output/latest_run.json` akan diperbarui otomatis setiap selesai proses scrape.
+- Path helper live bisa diubah lewat `SCALP_BHUMI_HELPER_PHP`.

@@ -61,6 +61,13 @@ class HttpConfig:
     keepalive_limit: int = int(_env("SCALP_HTTP_KEEPALIVE_LIMIT", default="32"))
 
 
+@dataclass(frozen=True)
+class BhumiLiveConfig:
+    helper_php: str = _env("SCALP_BHUMI_HELPER_PHP", default=r"C:\laragon\www\JOKI\bhumi-capture-importer\run.php")
+    helper_retries: int = int(_env("SCALP_BHUMI_HELPER_RETRIES", default="3"))
+    helper_timeout_seconds: int = int(_env("SCALP_BHUMI_HELPER_TIMEOUT", default="600"))
+
+
 DEFAULT_HEADERS = {
     "User-Agent": "Mozilla/5.0",
     "Referer": "https://bhumi.atrbpn.go.id/peta",

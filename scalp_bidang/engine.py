@@ -24,6 +24,7 @@ from .geometry import (
     sample_ring_points,
     web_mercator_to_lonlat,
 )
+from .live_bridge import run_live_geojson_pipeline
 from .models import ParcelFeature, PolygonArea, RunStats, SamplePoint
 from .postgres_writer import load_existing_hashes, write_to_postgres
 
@@ -453,6 +454,19 @@ def run_scrape(
     )
     if not areas:
         raise ValueError("Tidak ada polygon area yang ditemukan")
+
+    if (polygon_db_source or "").strip().lower() in {"kelurahan", "kecamatan"}:
+        result = run_live_geojson_pipeline(
+            areas=areas,
+            polygon_db_source=polygon_db_source,
+            postgres=postgres,
+            postgres_enabled=postgres_enabled,
+            output_dir=output_dir,
+            export_files=export_files,
+            progress_callback=progress_callback,
+        )
+        write_latest_run(output_dir, result)
+        return result
 
     total_features = 0
     total_inserted = 0

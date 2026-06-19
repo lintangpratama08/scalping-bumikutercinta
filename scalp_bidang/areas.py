@@ -172,3 +172,52 @@ def list_areas(level: str, postgres: PostgresConfig, kecamatan_id: int | None = 
             ]
     finally:
         conn.close()
+
+
+def load_kelurahan_areas_by_kecamatan_ids(
+    kecamatan_ids: list[int],
+    postgres: PostgresConfig,
+) -> list[PolygonArea]:
+    if not kecamatan_ids:
+        return []
+    import psycopg2
+
+    conn = psycopg2.connect(
+        host=postgres.host,
+        port=postgres.port,
+        user=postgres.user,
+        password=postgres.password,
+        dbname=postgres.dbname,
+    )
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT id, nama, geo_json, id_kota, id_kec
+                FROM data.tb_kelurahan_geo
+                WHERE id_kec = ANY(%s)
+                ORDER BY nama
+                """,
+                [kecamatan_ids],
+            )
+            areas: list[PolygonArea] = []
+            for row in cur.fetchall():
+                geo_json = row[2]
+                geometry = geo_json.get("geometry") if isinstance(geo_json, dict) and "geometry" in geo_json else geo_json
+                areas.append(
+                    PolygonArea(
+                        id=int(row[0]),
+                        name=str(row[1]),
+                        geometry=geometry,
+                        polygons=geometry_to_polygons(geometry),
+                        metadata={
+                            "id": row[0],
+                            "nama": row[1],
+                            "id_kota": row[3],
+                            "id_kec": row[4],
+                        },
+                    )
+                )
+            return areas
+    finally:
+        conn.close()
