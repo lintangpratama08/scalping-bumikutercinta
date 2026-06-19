@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from .config import PostgresConfig
-from .geometry import geometry_hash, geometry_to_wkt, normalize_identifier
+from .geometry import geometry_hash, geometry_to_wkt, is_bbox_like_geometry, normalize_identifier
 from .models import ParcelFeature
 
 
@@ -157,3 +157,75 @@ def write_to_postgres(postgres: PostgresConfig, features: list[ParcelFeature]) -
         conn.close()
 
     return inserted
+
+
+def load_precise_geometries_by_keys(postgres: PostgresConfig, features: list[ParcelFeature]) -> dict[str, dict[str, Any]]:
+    keys_by_type: dict[str, set[str]] = {
+        "nib": set(),
+        "objectid": set(),
+        "persilpasifid": set(),
+        "nomor": set(),
+    }
+
+    for feature in features:
+        props = feature.properties
+        for key in ("nib", "objectid", "persilpasifid", "nomor"):
+            value = normalize_identifier(props.get(key) or props.get(key.upper()))
+            if value:
+                keys_by_type[key].add(value)
+
+    if not any(keys_by_type.values()):
+        return {}
+
+    import psycopg2
+
+    conn = psycopg2.connect(
+        host=postgres.host,
+        port=postgres.port,
+        user=postgres.user,
+        password=postgres.password,
+        dbname=postgres.dbname,
+    )
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                f"""
+                SELECT
+                    nib,
+                    objectid,
+                    persilpasifid,
+                    nomor,
+                    ST_AsGeoJSON(wkb_geometry)::json
+                FROM {postgres.table}
+                WHERE wkb_geometry IS NOT NULL
+                  AND (
+                    lower(coalesce(nib, '')) = ANY(%s)
+                    OR lower(coalesce(objectid, '')) = ANY(%s)
+                    OR lower(coalesce(persilpasifid, '')) = ANY(%s)
+                    OR lower(coalesce(nomor, '')) = ANY(%s)
+                  )
+                """,
+                [
+                    list(keys_by_type["nib"]) or [""],
+                    list(keys_by_type["objectid"]) or [""],
+                    list(keys_by_type["persilpasifid"]) or [""],
+                    list(keys_by_type["nomor"]) or [""],
+                ],
+            )
+
+            resolved: dict[str, dict[str, Any]] = {}
+            for nib, objectid, persilpasifid, nomor, geometry in cur.fetchall():
+                if not isinstance(geometry, dict) or is_bbox_like_geometry(geometry):
+                    continue
+                for prefix, value in (
+                    ("nib", nib),
+                    ("objectid", objectid),
+                    ("persilpasifid", persilpasifid),
+                    ("nomor", nomor),
+                ):
+                    normalized = normalize_identifier(value)
+                    if normalized:
+                        resolved[f"{prefix}:{normalized}"] = geometry
+            return resolved
+    finally:
+        conn.close()

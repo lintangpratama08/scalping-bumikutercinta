@@ -215,3 +215,43 @@ def normalize_identifier(value: Any) -> str | None:
         return None
     text = str(value).strip()
     return text.casefold() if text else None
+
+
+def is_bbox_like_geometry(geometry: dict[str, Any]) -> bool:
+    geometry_type = geometry.get("type")
+    coordinates = geometry.get("coordinates") or []
+
+    polygons: list[list[list[float]]] = []
+    if geometry_type == "Polygon":
+        polygons = [coordinates]
+    elif geometry_type == "MultiPolygon":
+        polygons = coordinates
+    else:
+        return False
+
+    if len(polygons) != 1:
+        return False
+    rings = polygons[0]
+    if len(rings) != 1:
+        return False
+    ring = rings[0]
+    if len(ring) != 5:
+        return False
+
+    points = ring[:-1]
+    if ring[0] != ring[-1]:
+        return False
+
+    xs = sorted({round(float(point[0]), 12) for point in points})
+    ys = sorted({round(float(point[1]), 12) for point in points})
+    if len(xs) != 2 or len(ys) != 2:
+        return False
+
+    expected = {
+        (xs[0], ys[0]),
+        (xs[0], ys[1]),
+        (xs[1], ys[0]),
+        (xs[1], ys[1]),
+    }
+    actual = {(round(float(point[0]), 12), round(float(point[1]), 12)) for point in points}
+    return actual == expected

@@ -38,6 +38,11 @@ def _env(*names: str, default: str) -> str:
     return default
 
 
+def _env_bool(*names: str, default: bool) -> bool:
+    raw = _env(*names, default="1" if default else "0").strip().lower()
+    return raw in {"1", "true", "yes", "on"}
+
+
 _load_dotenv()
 
 
@@ -66,6 +71,7 @@ class BhumiLiveConfig:
     helper_php: str = _env("SCALP_BHUMI_HELPER_PHP", default=r"C:\laragon\www\JOKI\bhumi-capture-importer\run.php")
     helper_retries: int = int(_env("SCALP_BHUMI_HELPER_RETRIES", default="3"))
     helper_timeout_seconds: int = int(_env("SCALP_BHUMI_HELPER_TIMEOUT", default="600"))
+    skip_bbox_geometry: bool = _env_bool("SCALP_SKIP_BBOX_GEOMETRY", default=True)
 
 
 DEFAULT_HEADERS = {

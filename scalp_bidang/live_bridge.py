@@ -9,8 +9,10 @@ from typing import Any
 
 from .areas import load_kelurahan_areas_by_kecamatan_ids
 from .config import BhumiLiveConfig, PostgresConfig
+from .geometry import is_bbox_like_geometry, normalize_identifier
 from .importer import import_features_file
 from .models import PolygonArea
+from .postgres_writer import load_precise_geometries_by_keys
 
 
 def _resolve_kelurahan_targets(
@@ -109,18 +111,69 @@ def run_live_geojson_pipeline(
 
         try:
             output_path, helper_log = export_kelurahan_geojson_via_helper(int(area.id), live_config)
-            feature_count = _read_feature_count(output_path)
+            payload = json.loads(output_path.read_text(encoding="utf-8"))
+            raw_features = payload.get("features") if isinstance(payload, dict) else None
+            helper_features = raw_features if isinstance(raw_features, list) else []
+
+            precise_map = load_precise_geometries_by_keys(postgres, []) if not helper_features else load_precise_geometries_by_keys(
+                postgres,
+                [
+                    type("FeatureHolder", (), {"properties": (feature.get("properties") or {})})()
+                    for feature in helper_features
+                ],
+            )
+
+            refined_features: list[dict[str, Any]] = []
+            replaced_from_db = 0
+            low_precision_skipped = 0
+
+            for feature in helper_features:
+                if not isinstance(feature, dict):
+                    continue
+                properties = dict(feature.get("properties") or {})
+                geometry = feature.get("geometry") or {}
+                if is_bbox_like_geometry(geometry):
+                    replacement = None
+                    for key_name in ("nib", "objectid", "persilpasifid", "nomor"):
+                        normalized = normalize_identifier(properties.get(key_name) or properties.get(key_name.upper()))
+                        if normalized and f"{key_name}:{normalized}" in precise_map:
+                            replacement = precise_map[f"{key_name}:{normalized}"]
+                            break
+                    if replacement is not None:
+                        feature["geometry"] = replacement
+                        geometry = replacement
+                        properties["geometry_source"] = "db_precise_fallback"
+                        feature["properties"] = properties
+                        replaced_from_db += 1
+                    elif live_config.skip_bbox_geometry:
+                        low_precision_skipped += 1
+                        continue
+                    else:
+                        properties["geometry_source"] = "bhumi_bbox_like"
+                        feature["properties"] = properties
+                else:
+                    properties["geometry_source"] = "bhumi_live"
+                    feature["properties"] = properties
+
+                refined_features.append(feature)
+
+            payload["features"] = refined_features
+            feature_count = len(refined_features)
             area_result["features"] = feature_count
+            area_result["replaced_from_db"] = replaced_from_db
+            area_result["low_precision_skipped"] = low_precision_skipped
             features_total += feature_count
 
             if export_files:
                 output_dir.mkdir(parents=True, exist_ok=True)
                 copied_path = output_dir / output_path.name
-                shutil.copyfile(output_path, copied_path)
+                copied_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
                 area_result["outputs"]["geojson"] = str(copied_path)
                 import_path = copied_path
             else:
-                import_path = output_path
+                refined_temp = output_path.with_name(output_path.stem + "_refined.geojson")
+                refined_temp.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+                import_path = refined_temp
 
             if postgres_enabled:
                 import_result = import_features_file(
